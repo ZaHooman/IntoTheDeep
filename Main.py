@@ -428,7 +428,7 @@ def level_2():
             #hover_start_time = None
             if g == "open":
                 cx, cy = cursor_pos["x"], cursor_pos["y"]
-                if claw_rect.collidepoint(cx, cy):
+                if bone_rect.collidepoint(cx, cy):
                     screen.blit(font.render("hovering", True, (255,255,255)), (10, 50))
                     if hover_start_time is None:
                         hover_start_time = pygame.time.get_ticks()
@@ -441,13 +441,13 @@ def level_2():
                     else:
                         progress  = hover_duration / 2000
                         bar_width = int(claw_rect.width * progress)
-                        pygame.draw.rect(screen, (0, 200, 255), (claw_rect.x, claw_rect.y + claw_rect.height - 5, bar_width, 5))
+                        pygame.draw.rect(screen, (0, 200, 255), (bone_rect.x, bone_rect.y + bone_rect.height - 5, bar_width, 5))
                 else:
                     hover_start_time = None # Level complete 
         if player.colliderect(skull_rect):
             if g == "open":
                 cx, cy = cursor_pos["x"], cursor_pos["y"]
-                if claw_rect.collidepoint(cx, cy):
+                if skull_rect.collidepoint(cx, cy):
                     screen.blit(font.render("hovering", True, (255,255,255)), (10, 50))
                     if hover_start_time is None:
                         hover_start_time = pygame.time.get_ticks()
@@ -459,8 +459,8 @@ def level_2():
                         hover_start_time = None # Reset for next fossil
                     else:
                         progress  = hover_duration / 2000
-                        bar_width = int(claw_rect.width * progress)
-                        pygame.draw.rect(screen, (0, 200, 255), (claw_rect.x, claw_rect.y + claw_rect.height - 5, bar_width, 5))
+                        bar_width = int(skull_rect.width * progress)
+                        pygame.draw.rect(screen, (0, 200, 255), (skull_rect.x, skull_rect.y + skull_rect.height - 5, bar_width, 5))
                 else:
                     hover_start_time = None # Level complete  
 
