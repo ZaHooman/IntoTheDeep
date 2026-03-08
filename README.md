@@ -71,7 +71,7 @@ Place `hand_landmarker.task` in the same folder as the game.
 
 **3. Run**
 ```bash
-python Handtracker.py
+python Main.py
 ```
 
 Press **ESC** or the **X** button to quit.
