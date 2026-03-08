@@ -106,8 +106,8 @@ The hand skeleton is rendered as a glowing overlay in the top-right corner of th
 Our amazing team!
 
 - **Aishi Garimella** — Graphics Designer
-- **Raksha Kumaresan** - ML and Python Game Developer
-- **Sravani Mahankali** - ML and Python Game Developer
+- **Raksha Kumaresan** — ML and Python Game Developer
+- **Sravani Mahankali** — ML and Python Game Developer
 
 ---
 
