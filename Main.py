@@ -79,7 +79,7 @@ def draw_skeleton_on_black(shape, detection_result):
     return canvas
 
 def hand_tracker_thread():
-    MODEL_PATH = "hand_landmarker (1).task"
+    MODEL_PATH = "hand_landmarker (1).task" # edit name to proper landmaker file as provided
     base_options = python.BaseOptions(model_asset_path=MODEL_PATH)
     options = vision.HandLandmarkerOptions(
         base_options=base_options,
@@ -271,16 +271,16 @@ def level_1():
                 velocity_y = 0
 
             if player.colliderect(enemy1):
-                game_visible     = False
-                button_visible   = True
-                player.topleft   = (100, 275)
-                enemy1_world_x   = camera_x + 900
-                enemy1.y         = floor.top - 40
-                enemy_count      = 0  # Reset on death
+                game_visible = False
+                button_visible = True
+                player.topleft = (100, 275)
+                enemy1_world_x = camera_x + 900
+                enemy1.y = floor.top - 40
+                enemy_count = 0  
 
         # Level complete
         if enemy_count >= 5:
-            return True  # Win — caller can load level_2
+            return True  #next level
 
         # Hover button activation
         if g == "open":
@@ -293,12 +293,12 @@ def level_1():
                 screen.blit(font.render(str(hover_duration), True, (255,255,255)), (10, 70))
 
                 if hover_duration >= 2000:
-                    button_visible   = False
-                    game_visible     = True
-                    enemy_count      = 0
-                    camera_x         = 0
-                    player.topleft   = (100, 275)
-                    enemy1_world_x   = 500
+                    button_visible = False
+                    game_visible = True
+                    enemy_count = 0
+                    camera_x = 0
+                    player.topleft = (100, 275)
+                    enemy1_world_x = 500
                     enemy1_img_index = random.randint(0, len(enemy_images) - 1)
                 else:
                     progress  = hover_duration / 2000
@@ -337,7 +337,7 @@ def level_1():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                return False  # Quit
+                return False
 
         pygame.display.update()
         clock.tick(60)
@@ -498,8 +498,6 @@ def level_2():
         clock.tick(60)
     
     return True  # Return True to indicate level completion
-
-   
 
 # =============================================================Main Loop==============================================================
 running = True
